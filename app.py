@@ -53,3 +53,6 @@ async def upscale_image(file: UploadFile = File(...)):
     except Exception as e:
         logging.error(f"API error during image upscaling: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000)
